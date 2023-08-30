@@ -3,7 +3,7 @@ This data contract relates to the raw invoice data we're ingesting into the data
 
 The following are the business requirements:
 
-- Data is monitored to ensure it is updated by 9am every day
+- Data is monitored to ensure it is updated by 9am every day (expected to be updated by 830am)
   
 - The "id" field must be 100% unique
   
