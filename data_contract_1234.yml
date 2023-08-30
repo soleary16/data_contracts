@@ -8,12 +8,22 @@ field_health:
   schedule:
     type: fixed
     interval_minutes: 720
-    start_time: '2023-08-31T18:23:37.229000+00:00'
+    start_time: '2023-08-28T17:54:33.133000+00:00'
     timezone: UTC
-  description: Field Health for all fields in [Snowflake] demo_env:staging.salesforce_account
+  description: Field Health for all fields in demo_env:raw.zuora_invoice
   notify_rule_run_failure: false
+  fields:
+  - id
+  - invoice_amount
+  - invoice_description
+  - status
   use_important_fields: false
   use_partition_clause: false
+  selected_metrics:
+  - NULL_RATE
+  - UNIQUE_RATE
+  - ZERO_RATE
+  - NUMERIC_MEAN
 
 custom_sql:
 - description: 'Invoices with start dates after end dates in raw.zuora_invoice.'
