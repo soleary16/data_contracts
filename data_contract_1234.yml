@@ -69,3 +69,14 @@ field_quality:
   - field: invoice_created_ts
     operator: GT
     value: '24'
+freshness:
+- description: Freshness Rule for demo_env:raw.zuora_invoice
+  notify_rule_run_failure: false
+  schedule:
+    type: fixed
+    interval_minutes: 1440
+    start_time: '2023-08-31T20:45:00+00:00'
+    timezone: UTC
+  event_rollup_until_changed: false
+  table: demo_env:raw.zuora_invoice
+  freshness_threshold: 72
